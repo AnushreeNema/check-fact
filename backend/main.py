@@ -39,4 +39,8 @@ Based on the information above, is the claim true or false? Explain briefly."""
     )
 
     ai_reply = response["choices"][0]["message"]["content"]
-    return {"summary": summary}
+    return {
+        "verdict": "Likely True" if "true" in ai_reply.lower() else "Likely False",
+        "reason": ai_reply,
+        "source": "Wikipedia"
+    }
