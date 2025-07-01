@@ -62,3 +62,10 @@ button:hover {
   border: 1px solid #c3e6cb;
   color: #155724;
 }
+
+.checking {
+  display: block;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+}
