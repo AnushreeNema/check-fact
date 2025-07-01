@@ -31,4 +31,12 @@ async def fact_check(claim: Claim):
 Wikipedia says: {summary}
 
 Based on the information above, is the claim true or false? Explain briefly."""
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    ai_reply = response["choices"][0]["message"]["content"]
     return {"summary": summary}
