@@ -2,6 +2,8 @@ function checkClaim() {
   const claim = document.getElementById("claimInput").value;
   const resultBox = document.getElementById("result");
 
+  console.log(claim);
+
   if (!claim.trim()) {
     resultBox.className = "error";
     resultBox.style.display = "block";
