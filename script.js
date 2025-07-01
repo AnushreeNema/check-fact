@@ -1,15 +1,17 @@
-if (!claim.trim()) {
-  resultBox.className = "error";
-  resultBox.innerHTML = "Please enter a claim first.";
-  return;
-}
-
 function checkClaim() {
   const claim = document.getElementById("claimInput").value;
   const resultBox = document.getElementById("result");
 
+  if (!claim.trim()) {
+    resultBox.className = "error";
+    resultBox.style.display = "block";
+    resultBox.innerHTML = "Please enter a claim first.";
+    return;
+  }
+
   resultBox.innerHTML = "Checking...";
   resultBox.className = "checking";
+  resultBox.style.display = "block";
 
   fetch("http://localhost:8000/fact-check", {
     method: "POST",
@@ -30,7 +32,11 @@ function checkClaim() {
     .catch((err) => {
       resultBox.className = "error";
       resultBox.innerHTML =
-        "Sorry, there was a error in verifiying the fact. Please try again later.";
+        "Sorry, there was an error verifying the fact. Please try again later.";
       console.error(err);
     });
 }
+
+document.getElementById("claimInput").addEventListener("input", () => {
+  document.getElementById("result").style.display = "none";
+});
