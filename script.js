@@ -28,6 +28,7 @@ function checkClaim() {
           <div class="reason"><strong>Reason:</strong> ${data.reason}</div>
           <div class="source"><strong>Source:</strong> ${data.source}</div>
         `;
+      resultBox.scrollIntoView({ behavior: "smooth" });
     })
     .catch((err) => {
       resultBox.className = "error";
