@@ -69,3 +69,16 @@ button:hover {
   border: 1px solid #ffeeba;
   color: #856404;
 }
+
+.error {
+  display: block;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.verdict,
+.reason,
+.source {
+  margin-top: 10px;
+}
