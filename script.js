@@ -5,3 +5,10 @@ function checkClaim() {
   resultBox.innerHTML = "checking...";
   resultBox.className = "checking";
 }
+fetch("http://localhost:8000/fact-check", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ claim }),
+});
