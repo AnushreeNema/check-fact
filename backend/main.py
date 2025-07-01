@@ -11,3 +11,8 @@ app.add_middleware(
 )
 class Claim(BaseModel):
     claim: str
+
+@app.post("/fact-check")
+async def fact_check(claim: Claim):
+    return {"status": "ok"}
+
