@@ -1,3 +1,9 @@
+if (!claim.trim()) {
+  resultBox.className = "error";
+  resultBox.innerHTML = "Please enter a claim first.";
+  return;
+}
+
 function checkClaim() {
   const claim = document.getElementById("claimInput").value;
   const resultBox = document.getElementById("result");
