@@ -27,4 +27,8 @@ async def fact_check(claim: Claim):
         summary = wikipedia.summary(claim.claim, sentences=3)
     except Exception:
         summary = "No reliable information found on Wikipedia."
+    prompt = f"""Claim: {claim.claim}
+Wikipedia says: {summary}
+
+Based on the information above, is the claim true or false? Explain briefly."""
     return {"summary": summary}
