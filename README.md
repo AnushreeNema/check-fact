@@ -17,3 +17,4 @@ A simple web app that checks the truth of any claim using OpenAI and Wikipedia.
 
 - **Frontend**: HTML, CSS, JavaScript  
 - **Backend**: Python, FastAPI, OpenAI, Wikipedia
+
